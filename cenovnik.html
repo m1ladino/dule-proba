@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>*{box-sizing:border-box;}body{margin:0;}a{color:#1c9bd8;}a:hover{color:#e11f2a;}</style>
+<style>@keyframes duleSheen{0%{transform:translateX(-140%) skewX(-20deg);}60%,100%{transform:translateX(260%) skewX(-20deg);}}@keyframes dulePulseDot{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(255,255,255,0.7);}50%{opacity:.55;box-shadow:0 0 0 6px rgba(255,255,255,0);}}</style>
+  <style>
+    @media(max-width:860px){
+      [style*="grid-template-columns: repeat(4, 1fr)"]{grid-template-columns:repeat(2,1fr)!important;}
+      [style*="grid-template-columns: repeat(3, 1fr)"]{grid-template-columns:1fr!important;}
+      [style*="grid-template-columns: 1fr 1fr"]{grid-template-columns:1fr!important;}
+      [style*="grid-template-columns: 1fr 1.1fr"]{grid-template-columns:1fr!important;}
+      [style*="gap: 56px"]{gap:30px!important;}
+      [style*="font-size: 52px"]{font-size:34px!important;}
+      [style*="font-size: 40px"]{font-size:29px!important;}
+      [style*="font-size: 36px"]{font-size:27px!important;}
+      [style*="font-size: 34px"]{font-size:26px!important;}
+      [style*="padding: 60px 32px"]{padding:44px 20px!important;}
+      [style*="padding: 56px 32px"]{padding:40px 20px!important;}
+      [style*="padding: 48px 32px"]{padding:38px 20px!important;}
+      [style*="padding: 44px 32px"]{padding:32px 20px!important;}
+      [style*="padding: 40px 32px"]{padding:30px 20px!important;}
+      [style*="padding: 24px 32px"]{padding:20px 20px!important;}
+    }
+  </style>
+</helmet>
+<div ref="{{ rootRef }}" style="font-family:'Manrope',sans-serif;color:#1a2230;background:#ffffff;overflow-x:clip;">
+  <a href="tel:0606037037" style="display:block;text-decoration:none;position:relative;overflow:hidden;background:linear-gradient(90deg,#0b2f8f 0%,#1846d6 45%,#2f6bff 100%);box-shadow:inset 0 -1px 0 rgba(0,0,0,0.18),0 6px 20px -8px rgba(24,70,214,0.75);font-family:'Manrope',sans-serif;">
+    <span aria-hidden="true" style="position:absolute;top:0;left:0;height:100%;width:60px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.55),transparent);animation:duleSheen 3.6s ease-in-out infinite;pointer-events:none;"></span>
+    <div style="max-width:1240px;margin:0 auto;padding:9px 32px;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;position:relative;">
+      <span style="display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:13.5px;letter-spacing:1.2px;text-transform:uppercase;color:#fff;"><span style="width:8px;height:8px;border-radius:50%;background:#fff;animation:dulePulseDot 1.6s ease-in-out infinite;"></span>Akcija za vozače B kategorije</span>
+    </div>
+  </a>
+  <dc-import name="Header" active="cenovnik" hint-size="100%,74px" style="position:sticky;top:0;z-index:50;"></dc-import>
+
+  <section style="background:#14284a;position:relative;overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute;right:-30px;bottom:-90px;font-family:'Barlow Semi Condensed',sans-serif;font-weight:800;font-size:200px;line-height:1;color:rgba(255,255,255,0.04);letter-spacing:-6px;pointer-events:none;user-select:none;">RSD</div>
+    <div style="max-width:1240px;margin:0 auto;padding:44px 32px;position:relative;">
+      <div style="color:#8fa8cf;font-size:14px;font-weight:600;margin-bottom:14px;"><a href="index.html" style="color:#8fa8cf;text-decoration:none;">Početna</a> &nbsp;/&nbsp; Cenovnik</div>
+      <h1 style="font-family:'Barlow Semi Condensed',sans-serif;font-weight:800;font-size:52px;line-height:1.05;color:#fff;margin:0 0 14px;">Cenovnik</h1>
+      <p style="color:#a9bad6;font-size:18px;max-width:640px;margin:0;line-height:1.6;">Cena zavisi od kategorije koju upisuješ i dozvole koju već imaš. Sve je jasno ispisano, u dinarima, sa uračunatim taksama MUP-a — bez naknadnih iznenađenja.</p>
+    </div>
+  </section>
+
+  <section style="max-width:1240px;margin:0 auto;padding:48px 32px 28px;">
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:16px;box-shadow:0 30px 60px -40px rgba(20,40,74,0.4);">
+      <div style="min-width:920px;display:grid;grid-template-columns:0.9fr 1.1fr repeat(8,1fr);gap:1px;background:#dbe3ec;">
+        <div style="grid-row:span 2;background:#14284a;color:#fff;font-family:'Barlow Semi Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.6px;display:flex;align-items:center;justify-content:center;padding:14px 8px;text-transform:uppercase;text-align:center;">Kategorija</div>
+        <div style="grid-row:span 2;background:#14284a;color:#fff;font-family:'Barlow Semi Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.6px;display:flex;align-items:center;justify-content:center;padding:14px 8px;text-transform:uppercase;text-align:center;line-height:1.3;">Bez vozačke<br>dozvole</div>
+        <div style="grid-column:span 8;background:#0f2140;color:#cfe0f4;font-weight:700;font-size:12.5px;letter-spacing:0.7px;display:flex;align-items:center;justify-content:center;padding:12px 8px;text-transform:uppercase;text-align:center;">Kandidat već poseduje vozačku dozvolu kategorije</div>
+        <sc-for list="{{ subHeaders }}" as="h" hint-placeholder-count="8">
+          <div style="background:#127ab0;color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;padding:11px 6px;letter-spacing:0.3px;">{{ h }}</div>
+        </sc-for>
+        <sc-for list="{{ cells }}" as="c" hint-placeholder-count="80">
+          <div style="{{ c.style }}">{{ c.text }}</div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="margin-top:22px;display:flex;flex-direction:column;gap:8px;color:#6b7480;font-size:14px;">
+      <div>* Cene su izražene u dinarima (RSD).</div>
+      <div>* U cenu su uračunate takse MUP-a za polaganje teorijskog i praktičnog ispita.</div>
+    </div>
+    <div style="margin-top:36px;background:#eaf6fd;border-radius:16px;padding:24px 28px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:space-between;">
+      <div style="color:#0e5f8a;font-size:16px;line-height:1.5;"><strong>Nisi siguran koja cena važi za tebe?</strong> Pozovi nas — objasnimo ti sve u par minuta, mirno i bez žurbe.</div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="tel:0606037037" style="background:#127ab0;color:#fff;text-decoration:none;font-weight:700;font-size:15px;padding:13px 22px;border-radius:10px;white-space:nowrap;" style-hover="background:#0e5f8a;">060 6 037 037</a>
+        <a href="kontakt.html#prijava" style="background:#e11f2a;color:#fff;text-decoration:none;font-weight:700;font-size:15px;padding:13px 22px;border-radius:10px;white-space:nowrap;" style-hover="background:#c4141e;">Prijavi se</a>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="Footer" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  rootRef = React.createRef();
+  renderVals() {
+    const cols = ['AM','A1','A2','A','B','BE','C','CE'];
+    const rows = [
+      { code: 'AM', base: '39.900', ups: { B:'20.050', BE:'20.050', C:'20.050', CE:'20.050' } },
+      { code: 'A1', base: '62.000', ups: { AM:'21.900', B:'47.150', BE:'47.150', C:'47.150', CE:'47.150' } },
+      { code: 'A2', base: '79.000', ups: { AM:'33.800', A1:'21.900', B:'64.150', BE:'64.150', C:'64.150', CE:'64.150' } },
+      { code: 'A', base: '96.000', ups: { AM:'44.000', A1:'33.800', A2:'21.900', B:'81.150', BE:'81.150', C:'81.150', CE:'81.150' } },
+      { code: 'B', base: '92.000', ups: { AM:'69.150', A1:'69.150', A2:'61.150', A:'54.800', C:'45.150', CE:'77.150' } },
+      { code: 'BE', base: null, ups: { B:'29.800' } },
+      { code: 'C', base: null, ups: { B:'80.300', BE:'80.300' } },
+      { code: 'CE', base: null, ups: { C:'50.750' } },
+    ];
+    const codeStyle = "background:#1c9bd8;color:#fff;font-family:'Barlow Semi Condensed',sans-serif;font-weight:800;font-size:22px;display:flex;align-items:center;justify-content:center;padding:16px 8px;letter-spacing:0.5px;";
+    const baseFill = "background:#fff;color:#e11f2a;font-family:'Barlow Semi Condensed',sans-serif;font-weight:800;font-size:20px;display:flex;align-items:center;justify-content:center;padding:16px 8px;";
+    const baseEmpty = "background:#f4f7fb;color:#c5ccd6;display:flex;align-items:center;justify-content:center;padding:16px 8px;font-size:16px;";
+    const upFill = "background:#fff;color:#14284a;font-weight:700;font-size:15.5px;display:flex;align-items:center;justify-content:center;padding:16px 6px;";
+    const upEmpty = "background:#f7f9fc;display:flex;align-items:center;justify-content:center;padding:16px 6px;color:#e0e6ee;font-size:14px;";
+    const cells = [];
+    rows.forEach(r => {
+      cells.push({ text: r.code, style: codeStyle });
+      cells.push({ text: r.base || '—', style: r.base ? baseFill : baseEmpty });
+      cols.forEach(col => {
+        const v = r.ups[col];
+        cells.push({ text: v || '·', style: v ? upFill : upEmpty });
+      });
+    });
+    return { rootRef: this.rootRef, subHeaders: cols, cells };
+  }
+}
+</script>
+</body>
+</html>
