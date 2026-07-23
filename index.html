@@ -71,8 +71,14 @@
       .dule-cta-btns>a{justify-content:center!important;width:100%!important;}
       .dule-cta-or{display:none!important;}
       .dule-cta-car{display:none!important;}
-      .dule-slide{padding:40px 42px!important;}
+      .dule-slide{padding:40px 42px!important;scroll-snap-align:center;}
       .dule-slide p{font-size:18px!important;}
+      .dule-testi-arrow{display:none!important;}
+      .dule-testi-dots{display:none!important;}
+      .dule-testi-view{overflow-x:auto!important;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+      .dule-testi-view::-webkit-scrollbar{display:none;}
+      .dule-testi-track{transform:none!important;}
+      .gallery-btn{opacity:1!important;transform:none!important;pointer-events:auto!important;}
     }
     @media(max-width:560px){
       [style*="grid-template-columns: repeat(4, 1fr)"]{grid-template-columns:1fr!important;}
@@ -234,8 +240,8 @@
       <h2 style="font-family:'Barlow Semi Condensed',sans-serif;font-weight:800;font-size:44px;line-height:1.05;color:#14284a;margin:0;">Šta kažu naši kandidati</h2>
     </div>
     <div data-reveal="up" style="position:relative;background:#fff;border:1px solid #e6eaef;border-radius:22px;box-shadow:0 30px 60px -40px rgba(20,40,74,0.5);overflow:hidden;">
-      <div style="overflow:hidden;">
-        <div style="display:flex;transition:transform .5s cubic-bezier(.4,0,.2,1);transform:{{ sliderTransform }};">
+      <div class="dule-testi-view" style="overflow:hidden;">
+        <div class="dule-testi-track" style="display:flex;transition:transform .5s cubic-bezier(.4,0,.2,1);transform:{{ sliderTransform }};">
           <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="4">
             <div class="dule-slide" style="min-width:100%;padding:56px 64px;text-align:center;">
               <div style="color:#e11f2a;font-size:18px;letter-spacing:3px;margin-bottom:20px;">{{ t.stars }}</div>
@@ -246,10 +252,10 @@
           </sc-for>
         </div>
       </div>
-      <button onClick="{{ prev }}" aria-label="Prethodno" style="position:absolute;left:18px;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1px solid #e6eaef;background:#fff;color:#14284a;font-size:20px;cursor:pointer;box-shadow:0 6px 16px -8px rgba(20,40,74,0.4);" style-hover="background:#14284a;color:#fff;">‹</button>
-      <button onClick="{{ next }}" aria-label="Sledeće" style="position:absolute;right:18px;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1px solid #e6eaef;background:#fff;color:#14284a;font-size:20px;cursor:pointer;box-shadow:0 6px 16px -8px rgba(20,40,74,0.4);" style-hover="background:#14284a;color:#fff;">›</button>
+      <button onClick="{{ prev }}" aria-label="Prethodno" class="dule-testi-arrow" style="position:absolute;left:18px;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1px solid #e6eaef;background:#fff;color:#14284a;font-size:20px;cursor:pointer;box-shadow:0 6px 16px -8px rgba(20,40,74,0.4);" style-hover="background:#14284a;color:#fff;">‹</button>
+      <button onClick="{{ next }}" aria-label="Sledeće" class="dule-testi-arrow" style="position:absolute;right:18px;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1px solid #e6eaef;background:#fff;color:#14284a;font-size:20px;cursor:pointer;box-shadow:0 6px 16px -8px rgba(20,40,74,0.4);" style-hover="background:#14284a;color:#fff;">›</button>
     </div>
-    <div style="display:flex;justify-content:center;gap:9px;margin-top:26px;">
+    <div class="dule-testi-dots" style="display:flex;justify-content:center;gap:9px;margin-top:26px;">
       <sc-for list="{{ dots }}" as="d" hint-placeholder-count="4">
         <button onClick="{{ d.go }}" aria-label="Utisak" style="{{ d.style }}"></button>
       </sc-for>
