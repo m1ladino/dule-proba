@@ -25,9 +25,9 @@
     }
   </style>
 </helmet>
-<header style="position:sticky;top:0;z-index:50;background:#ffffff;border-bottom:1px solid #e6eaef;box-shadow:0 1px 0 rgba(20,40,74,0.04),0 8px 24px -18px rgba(20,40,74,0.35);font-family:'Manrope',sans-serif;">
+<header ref="{{ headerRef }}" style="position:sticky;top:0;z-index:50;background:#ffffff;border-bottom:1px solid #e6eaef;box-shadow:0 1px 0 rgba(20,40,74,0.04),0 8px 24px -18px rgba(20,40,74,0.35);font-family:'Manrope',sans-serif;transition:transform .38s cubic-bezier(.4,0,.2,1);will-change:transform;">
   <div class="dule-bar-inner" style="max-width:1240px;margin:0 auto;padding:0 32px;height:74px;display:flex;align-items:center;justify-content:space-between;gap:16px;">
-    <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;">
+    <a href="Pocetna.dc.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;">
       <img src="assets/logo.png" alt="Auto škola Dule" class="dule-logo" style="height:56px;width:auto;display:block;margin-left:-27px;" />
     </a>
     <nav class="dule-desktop-nav" style="display:flex;align-items:center;gap:4px;">
@@ -58,25 +58,46 @@
   </sc-if>
 </header>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;74px&quot;},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;pocetna&quot;,&quot;o-nama&quot;,&quot;kategorije&quot;,&quot;galerija&quot;,&quot;cenovnik&quot;,&quot;kontakt&quot;],&quot;default&quot;:&quot;pocetna&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;74px&quot;},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;pocetna&quot;,&quot;o-nama&quot;,&quot;kategorije&quot;,&quot;online&quot;,&quot;galerija&quot;,&quot;cenovnik&quot;,&quot;kontakt&quot;],&quot;default&quot;:&quot;pocetna&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
 class Component extends DCLogic {
   state = { menuOpen: false };
+  headerRef = React.createRef();
+  componentDidMount() {
+    const el = this.headerRef.current;
+    if (!el) return;
+    let last = window.scrollY;
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      const y = window.scrollY;
+      if (this.state.menuOpen) { el.style.transform = 'translateY(0)'; last = y; return; }
+      if (y > last && y > 90) el.style.transform = 'translateY(-140%)';
+      else el.style.transform = 'translateY(0)';
+      last = y;
+    };
+    this._onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+  }
+  componentWillUnmount() {
+    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
+  }
   renderVals() {
     const active = this.props.active || 'pocetna';
     const base = "text-decoration:none;font-weight:600;font-size:15px;padding:9px 14px;border-radius:8px;letter-spacing:0.1px;transition:color .15s;";
     const mbase = "text-decoration:none;font-weight:700;font-size:16.5px;padding:14px 12px;border-radius:10px;transition:background .15s;";
     const nav = [
-      { key: 'pocetna', label: 'Početna', href: 'index.html' },
-      { key: 'o-nama', label: 'O nama', href: 'o-nama.html' },
-      { key: 'kategorije', label: 'Kategorije', href: 'kategorije.html' },
-      { key: 'galerija', label: 'Galerija', href: 'galerija.html' },
-      { key: 'cenovnik', label: 'Cenovnik', href: 'cenovnik.html' },
-      { key: 'kontakt', label: 'Kontakt', href: 'kontakt.html' },
+      { key: 'pocetna', label: 'Početna', href: 'Pocetna.dc.html' },
+      { key: 'o-nama', label: 'O nama', href: 'O-nama.dc.html' },
+      { key: 'kategorije', label: 'Kategorije', href: 'Kategorije.dc.html' },
+      { key: 'galerija', label: 'Galerija', href: 'Galerija.dc.html' },
+      { key: 'cenovnik', label: 'Cenovnik', href: 'Cenovnik.dc.html' },
+      { key: 'kontakt', label: 'Kontakt', href: 'Kontakt.dc.html' },
     ];
     const open = this.state.menuOpen;
     const barB = "position:absolute;left:0;width:100%;height:2px;border-radius:2px;background:#14284a;transition:transform .25s,opacity .2s;";
     return {
       menuOpen: open,
+      headerRef: this.headerRef,
       toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
       barTop: barB + (open ? "top:6px;transform:rotate(45deg);" : "top:0;"),
       barMid: barB + "top:6px;" + (open ? "opacity:0;" : ""),

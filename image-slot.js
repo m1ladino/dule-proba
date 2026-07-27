@@ -359,6 +359,7 @@
     '.ctl:popover-open{position:fixed;inset:auto;transform:translateX(-100%)}' +
     ':host([data-filled][data-editable]:hover) .ctl,:host([data-reframe]) .ctl' +
     '  {opacity:1;pointer-events:auto}' +
+    ':host([locked]) .ctl{display:none!important}' +
     '.ctl button{appearance:none;border:0;border-radius:6px;padding:5px 10px;cursor:pointer;' +
     '  background:rgba(0,0,0,.65);color:#fff;font:11px/1 system-ui,-apple-system,sans-serif;' +
     '  backdrop-filter:blur(6px)}' +
@@ -568,10 +569,11 @@
       this._subFn = () => this._render();
       // Shadow-DOM listeners live with the shadow DOM — bound once here so
       // disconnect/reconnect (e.g. React remount) doesn't stack handlers.
-      this._empty.addEventListener('click', () => this._input.click());
+      this._empty.addEventListener('click', () => { if (this.hasAttribute('locked')) return; this._input.click(); });
       root.addEventListener('click', (e) => {
         const act = e.target && e.target.getAttribute && e.target.getAttribute('data-act');
         if (!act) return;
+        if (this.hasAttribute('locked')) return;
         // The hidden controls are opacity-0 but still tabbable — without
         // this gate a keyboard user could drive them on a read-only share
         // link (mirrors the dblclick handler's editable gate).
@@ -612,6 +614,7 @@
       // Gated only on editable — any filled slot can be repositioned/scaled,
       // regardless of fit. Share links (no writeFile) stay static.
       this.addEventListener('dblclick', (e) => {
+        if (this.hasAttribute('locked')) return;
         if (!this.hasAttribute('data-editable') || !this._reframes()) return;
         e.preventDefault();
         if (this.hasAttribute('data-reframe')) this._exitReframe(true);
@@ -838,6 +841,7 @@
     // handleEvent — one listener object for all four drag events keeps the
     // add/remove symmetric and the depth counter correct.
     handleEvent(e) {
+      if (this.hasAttribute('locked')) return;
       if (e.type === 'dragenter' || e.type === 'dragover') {
         // Without preventDefault the browser never fires 'drop'.
         e.preventDefault();

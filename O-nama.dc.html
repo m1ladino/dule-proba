@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <style>*{box-sizing:border-box;}body{margin:0;}a{color:#1c9bd8;}a:hover{color:#e11f2a;}@keyframes duleSpin{to{transform:rotate(360deg);}}</style>
+<style>@keyframes duleSheen{0%{transform:translateX(-140%) skewX(-20deg);}60%,100%{transform:translateX(260%) skewX(-20deg);}}@keyframes dulePulseDot{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(255,255,255,0.7);}50%{opacity:.55;box-shadow:0 0 0 6px rgba(255,255,255,0);}}</style>
+  <style>
+    @media(max-width:860px){
+      [style*="grid-template-columns: repeat(4, 1fr)"]{grid-template-columns:repeat(2,1fr)!important;}
+      [style*="grid-template-columns: repeat(3, 1fr)"]{grid-template-columns:1fr!important;}
+      [style*="grid-template-columns: 1fr 1fr"]{grid-template-columns:1fr!important;}
+      [style*="grid-template-columns: 1fr 1.1fr"]{grid-template-columns:1fr!important;}
+      [style*="gap: 56px"]{gap:30px!important;}
+      [style*="font-size: 52px"]{font-size:34px!important;}
+      [style*="font-size: 40px"]{font-size:29px!important;}
+      [style*="font-size: 36px"]{font-size:27px!important;}
+      [style*="font-size: 34px"]{font-size:26px!important;}
+      [style*="padding: 60px 32px"]{padding:44px 20px!important;}
+      [style*="padding: 56px 32px"]{padding:40px 20px!important;}
+      [style*="padding: 48px 32px"]{padding:38px 20px!important;}
+      [style*="padding: 44px 32px"]{padding:32px 20px!important;}
+      [style*="padding: 40px 32px"]{padding:30px 20px!important;}
+      [style*="padding: 24px 32px"]{padding:20px 20px!important;}
+      [style*="height: 400px"]{height:auto!important;}
+      [style*="height: 400px"] img{height:auto!important;object-fit:contain!important;}
+    }
+  </style>
+</helmet>
+<div ref="{{ rootRef }}" style="font-family:'Manrope',sans-serif;color:#1a2230;background:#ffffff;overflow-x:clip;">
+  <a href="tel:0606037037" style="display:block;text-decoration:none;position:relative;overflow:hidden;background:linear-gradient(90deg,#0b2f8f 0%,#1846d6 45%,#2f6bff 100%);box-shadow:inset 0 -1px 0 rgba(0,0,0,0.18),0 6px 20px -8px rgba(24,70,214,0.75);font-family:'Manrope',sans-serif;">
+    <span aria-hidden="true" style="position:absolute;top:0;left:0;height:100%;width:60px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.55),transparent);animation:duleSheen 3.6s ease-in-out infinite;pointer-events:none;"></span>
+    <div style="max-width:1240px;margin:0 auto;padding:9px 32px;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;position:relative;">
+      <span style="display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:13.5px;letter-spacing:1.2px;text-transform:uppercase;color:#fff;"><span style="width:8px;height:8px;border-radius:50%;background:#fff;animation:dulePulseDot 1.6s ease-in-out infinite;"></span>Akcija za vozače B kategorije</span>
+    </div>
+  </a>
+  <dc-import name="Header" active="o-nama" hint-size="100%,74px" style="position:sticky;top:0;z-index:50;"></dc-import>
+
+  <section style="background:#14284a;position:relative;overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute;left:-40px;bottom:-90px;font-family:'Barlow Semi Condensed',sans-serif;font-weight:800;font-size:200px;line-height:1;color:rgba(255,255,255,0.04);letter-spacing:-6px;pointer-events:none;user-select:none;">DULE</div>
+    <div style="max-width:1240px;margin:0 auto;padding:44px 32px;position:relative;">
+      <div style="color:#8fa8cf;font-size:14px;font-weight:600;margin-bottom:14px;"><a href="Pocetna.dc.html" style="color:#8fa8cf;text-decoration:none;">Početna</a> &nbsp;/&nbsp; O nama</div>
+      <h1 style="font-family:'Barlow Semi Condensed',sans-serif;font-weight:800;font-size:52px;line-height:1.05;color:#fff;margin:0;">O nama</h1>
+    </div>
+  </section>
+
+  <section style="max-width:1240px;margin:0 auto;padding:56px 32px 44px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
+      <div data-reveal="left">
+        <div style="color:#127ab0;font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;">Auto škola Dule</div>
+        <h2 style="font-family:'Barlow Semi Condensed',sans-serif;font-weight:800;font-size:40px;line-height:1.08;color:#14284a;margin:0 0 22px;">Uz tebe smo na svakom kilometru — još od 2018.</h2>
+        <p style="font-size:17px;line-height:1.7;color:#54606f;margin:0 0 18px;">Auto školu Dule otvorili smo u junu 2018. Od prvog dana nam je bitno da se kod nas osećaš prijatno, a ne kao broj u redu. Baš zbog toga nam se ljudi vraćaju i šalju svoje najbliže.</p>
+        <p style="font-size:17px;line-height:1.7;color:#54606f;margin:0;"><strong style="color:#14284a;">Više od 80% kandidata</strong> dođe na preporuku — a bolju reklamu od zadovoljnog đaka ne možemo da poželimo.</p>
+      </div>
+      <div data-reveal="right" style="height:400px;border-radius:20px;overflow:hidden;box-shadow:0 40px 70px -34px rgba(20,40,74,0.5);"><img src="assets/tim-o-nama.jpg" alt="Tim auto škole Dule" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+    </div>
+  </section>
+
+  <section style="max-width:1240px;margin:0 auto;padding:24px 32px 40px;">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
+      <sc-for list="{{ fleet }}" as="f" hint-placeholder-count="4">
+        <div data-reveal="up" style="background:#f4f7fb;border-radius:16px;padding:28px 24px;text-align:center;">
+          <div data-count="{{ f.num }}" style="font-family:'Barlow Semi Condensed',sans-serif;font-weight:800;font-size:46px;line-height:1;color:#e11f2a;">0</div>
+          <div style="color:#54606f;font-size:15px;font-weight:600;margin-top:8px;">{{ f.label }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="background:#f4f7fb;">
+    <div style="max-width:1240px;margin:0 auto;padding:40px 32px;display:grid;grid-template-columns:1fr 1fr;gap:32px;">
+      <div data-reveal="up" style="background:#fff;border:1px solid #e6eaef;border-radius:20px;padding:40px;border-top:4px solid #1c9bd8;">
+        <h3 style="font-family:'Barlow Semi Condensed',sans-serif;font-weight:800;font-size:26px;color:#14284a;margin:0 0 20px;letter-spacing:0.4px;">NAPREDAK</h3>
+        <div style="display:flex;flex-direction:column;gap:14px;font-size:16px;line-height:1.65;color:#54606f;">
+          <p style="margin:0;">Na početku rada naš tim je brojao 2 radnika i dva putnička vozila. Zbog povećanja obima poslovanja, konstantno smo radili na proširenju.</p>
+          <p style="margin:0;">Danas naš tim broji <strong style="color:#14284a;">10 radnika</strong>, a vozni park čine 6 putničkih vozila, 4 motocikla, jedno teretno i 2 priključna vozila.</p>
+          <p style="margin:0;">Vršimo osposobljavanje za <strong style="color:#14284a;">8 kategorija</strong>: AM, A1, A2, A, B, BE, C i CE.</p>
+          <p style="margin:0;">Imamo predstavništva na dve lokacije — u <strong style="color:#14284a;">Kruševcu</strong> i <strong style="color:#14284a;">Varvarinu</strong>.</p>
+        </div>
+      </div>
+      <div data-reveal="up" style="background:#fff;border:1px solid #e6eaef;border-radius:20px;padding:40px;border-top:4px solid #e11f2a;">
+        <h3 style="font-family:'Barlow Semi Condensed',sans-serif;font-weight:800;font-size:26px;color:#14284a;margin:0 0 20px;letter-spacing:0.4px;">POVERENJE</h3>
+        <div style="display:flex;flex-direction:column;gap:14px;font-size:16px;line-height:1.65;color:#54606f;">
+          <p style="margin:0;">Za veoma kratko vreme zadobili smo veliko poverenje kandidata — to je naš najveći uspeh, stečen profesionalnim zalaganjem i trudom.</p>
+          <p style="margin:0;"><strong style="color:#14284a;">Zadovoljan i naučen đak je najbolja reklama koju možemo imati.</strong> Jedino kvalitetan rad ostvaruje uspeh.</p>
+          <p style="margin:0;">Naši instruktori i predavači poseduju odgovarajuće licence i kontinuirano se usavršavaju.</p>
+          <p style="margin:0;">Veliki broj kandidata koji dolaze po preporuci i dobra prolaznost na ispitima daju nam motivaciju da budemo još bolji za sledeće generacije.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#14284a;position:relative;overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute;right:-60px;top:-80px;width:320px;height:320px;border-radius:50%;border:2px dashed rgba(255,255,255,0.08);animation:duleSpin 40s linear infinite;"></div>
+    <div style="max-width:1240px;margin:0 auto;padding:44px 32px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;position:relative;">
+      <h2 style="font-family:'Barlow Semi Condensed',sans-serif;font-weight:800;font-size:36px;line-height:1.1;color:#fff;margin:0;">Pozovi nas i postani deo naše priče</h2>
+      <a href="tel:0606037037" style="display:inline-flex;align-items:center;background:#e11f2a;color:#fff;text-decoration:none;font-weight:700;font-size:17px;padding:16px 30px;border-radius:12px;box-shadow:0 16px 30px -14px rgba(225,31,42,0.9);" style-hover="background:#c4141e;">Pozovi i upiši se</a>
+    </div>
+  </section>
+
+  <dc-import name="Footer" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  rootRef = React.createRef();
+  componentDidMount() {
+    const countUp = (el) => {
+      const target = parseInt(el.getAttribute('data-count'), 10) || 0;
+      const dur = 1100, start = performance.now();
+      const tick = (now) => {
+        const p = Math.min((now - start) / dur, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(eased * target);
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) {
+        e.target.style.opacity = 1; e.target.style.transform = 'none';
+        const num = e.target.querySelector('[data-count]');
+        if (num) countUp(num);
+        io.unobserve(e.target);
+      } });
+    }, { threshold: 0.12 });
+    const root = this.rootRef.current;
+    if (root) root.querySelectorAll('[data-reveal]').forEach(el => {
+      const dir = el.getAttribute('data-reveal');
+      el.style.opacity = '0';
+      el.style.transform = dir === 'left' ? 'translateX(-40px)' : dir === 'right' ? 'translateX(40px)' : 'translateY(28px)';
+      el.style.transition = 'opacity .7s ease, transform .7s ease';
+      io.observe(el);
+    });
+  }
+  renderVals() {
+    return {
+      rootRef: this.rootRef,
+      fleet: [
+        { num: '6', label: 'Putničkih vozila' },
+        { num: '4', label: 'Motocikla' },
+        { num: '1', label: 'Teretno vozilo' },
+        { num: '2', label: 'Priključna vozila' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

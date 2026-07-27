@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <style>*{box-sizing:border-box;}body{margin:0;}a{color:#1c9bd8;}a:hover{color:#e11f2a;}
+  @keyframes dulePulse{0%{box-shadow:0 0 0 0 rgba(225,31,42,0.55),0 0 10px 2px rgba(225,31,42,0.55);}70%{box-shadow:0 0 0 16px rgba(225,31,42,0),0 0 10px 2px rgba(225,31,42,0.55);}100%{box-shadow:0 0 0 0 rgba(225,31,42,0),0 0 10px 2px rgba(225,31,42,0.55);}}
+  @keyframes duleLabelIn{from{opacity:0;transform:translate(-50%,6px);}to{opacity:1;transform:translate(-50%,0);}}</style>
+<style>@keyframes duleSheen{0%{transform:translateX(-140%) skewX(-20deg);}60%,100%{transform:translateX(260%) skewX(-20deg);}}@keyframes dulePulseDot{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(255,255,255,0.7);}50%{opacity:.55;box-shadow:0 0 0 6px rgba(255,255,255,0);}}</style>
+  <style>
+    @media(max-width:860px){
+      [style*="grid-template-columns: repeat(4, 1fr)"]{grid-template-columns:repeat(2,1fr)!important;}
+      [style*="grid-template-columns: repeat(3, 1fr)"]{grid-template-columns:1fr!important;}
+      [style*="grid-template-columns: 1fr 1fr"]{grid-template-columns:1fr!important;}
+      [style*="grid-template-columns: 1fr 1.1fr"]{grid-template-columns:1fr!important;}
+      [style*="gap: 56px"]{gap:30px!important;}
+      [style*="font-size: 52px"]{font-size:34px!important;}
+      [style*="font-size: 40px"]{font-size:29px!important;}
+      [style*="font-size: 36px"]{font-size:27px!important;}
+      [style*="font-size: 34px"]{font-size:26px!important;}
+      [style*="padding: 60px 32px"]{padding:44px 20px!important;}
+      [style*="padding: 56px 32px"]{padding:40px 20px!important;}
+      [style*="padding: 48px 32px"]{padding:38px 20px!important;}
+      [style*="padding: 44px 32px"]{padding:32px 20px!important;}
+      [style*="padding: 40px 32px"]{padding:30px 20px!important;}
+      [style*="padding: 24px 32px"]{padding:20px 20px!important;}
+    }
+    @media(max-width:560px){
+      .dule-team-grid{grid-template-columns:1fr!important;}
+      .dule-team-grid [style*="height: 250px"]{height:320px!important;}
+    }
+    @media(max-width:760px){
+      .dule-fleet-view{overflow-x:auto!important;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+      .dule-fleet-view::-webkit-scrollbar{display:none;}
+      .dule-fleet-track{transform:none!important;}
+      .dule-fleet-slide{scroll-snap-align:center;}
+      .dule-fleet-card{display:block!important;}
+      .dule-fleet-info{padding:32px 24px 22px!important;text-align:center;align-items:center!important;}
+      .dule-fleet-info p{max-width:none!important;margin-left:auto!important;margin-right:auto!important;}
+      .dule-fleet-info>div{display:flex;flex-direction:column;align-items:center;}
+      .dule-fleet-stage{min-height:300px!important;padding:24px!important;}
+      .dule-fleet-stage>div:last-child{width:100%!important;max-width:340px!important;}
+      .dule-fleet-arrow{display:none!important;}
+      .dule-fleet-dots{display:flex!important;}
+    }
+  </style>
+</helmet>
+<div ref="{{ rootRef }}" style="font-family:'Manrope',sans-serif;color:#1a2230;background:#ffffff;overflow-x:clip;">
+  <a href="tel:0606037037" style="display:block;text-decoration:none;position:relative;overflow:hidden;background:linear-gradient(90deg,#0b2f8f 0%,#1846d6 45%,#2f6bff 100%);box-shadow:inset 0 -1px 0 rgba(0,0,0,0.18),0 6px 20px -8px rgba(24,70,214,0.75);font-family:'Manrope',sans-serif;">
+    <span aria-hidden="true" style="position:absolute;top:0;left:0;height:100%;width:60px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.55),transparent);animation:duleSheen 3.6s ease-in-out infinite;pointer-events:none;"></span>
+    <div style="max-width:1240px;margin:0 auto;padding:9px 32px;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;position:relative;">
+      <span style="display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:13.5px;letter-spacing:1.2px;text-transform:uppercase;color:#fff;"><span style="width:8px;height:8px;border-radius:50%;background:#fff;animation:dulePulseDot 1.6s ease-in-out infinite;"></span>Akcija za vozače B kategorije</span>
+    </div>
+  </a>
+  <dc-import name="Header" active="galerija" hint-size="100%,74px" style="position:sticky;top:0;z-index:50;"></dc-import>
+
+  <section style="background:#14284a;position:relative;overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute;right:-30px;bottom:-90px;font-family:'Barlow Semi Condensed',sans-serif;font-weight:800;font-size:200px;line-height:1;color:rgba(255,255,255,0.04);letter-spacing:-6px;pointer-events:none;user-select:none;">DULE</div>
+    <div style="max-width:1240px;margin:0 auto;padding:44px 32px;position:relative;">
+      <div style="color:#8fa8cf;font-size:14px;font-weight:600;margin-bottom:14px;"><a href="Pocetna.dc.html" style="color:#8fa8cf;text-decoration:none;">Početna</a> &nbsp;/&nbsp; Galerija</div>
+      <h1 style="font-family:'Barlow Semi Condensed',sans-serif;font-weight:800;font-size:52px;line-height:1.05;color:#fff;margin:0 0 14px;">Galerija</h1>
+      <p style="color:#a9bad6;font-size:18px;max-width:620px;margin:0;line-height:1.6;">Upoznaj naš tim instruktora i pogledaj vozni park na kojem ćeš vežbati. Ovde je sve što te čeka kad nam se pridružiš.</p>
+    </div>
+  </section>
+
+  <section id="instruktori" ref="{{ instruktoriRef }}" style="max-width:1240px;margin:0 auto;padding:60px 32px 20px;scroll-margin-top:90px;">
+    <div data-reveal="up" style="max-width:640px;margin:0 auto 36px;text-align:center;">
+      <div style="color:#127ab0;font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">Naš tim</div>
+      <h2 style="font-family:'Barlow Semi Condensed',sans-serif;font-weight:800;font-size:40px;line-height:1.05;color:#14284a;margin:0;">Instruktori</h2>
+    </div>
+    <div class="dule-team-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:22px;">
+      <sc-for list="{{ instructors }}" as="i" hint-placeholder-count="8">
+        <div data-reveal="up" style="background:#fff;border:1px solid #e6eaef;border-radius:18px;overflow:hidden;box-shadow:0 2px 6px rgba(20,40,74,0.04);transition:transform .2s,box-shadow .2s;" style-hover="transform:translateY(-5px);box-shadow:0 26px 44px -28px rgba(20,40,74,0.45);">
+          <div style="height:250px;background:#eef2f7;overflow:hidden;">{{ i.photo }}</div>
+          <div style="padding:16px 18px 18px;">
+            <div style="font-weight:800;color:#14284a;font-size:16px;">{{ i.name }}</div>
+            <div style="color:#e11f2a;font-size:13px;font-weight:700;margin-top:3px;">{{ i.role }}</div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="vozila" ref="{{ vozilaRef }}" style="background:#f4f7fb;scroll-margin-top:90px;">
+    <div style="max-width:1240px;margin:0 auto;padding:60px 32px;">
+      <div data-reveal="up" style="max-width:640px;margin:0 auto 32px;text-align:center;">
+        <div style="color:#127ab0;font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">Vozni park</div>
+        <h2 style="font-family:'Barlow Semi Condensed',sans-serif;font-weight:800;font-size:40px;line-height:1.05;color:#14284a;margin:0 0 12px;">Vozila po kategorijama</h2>
+        <p style="font-size:16.5px;color:#6b7480;margin:0;line-height:1.6;">Izaberi kategoriju i pogledaj vozilo na kojem ćeš vežbati.</p>
+      </div>
+      <div class="dule-fleet-tabs" ref="{{ fleetTabsRef }}" data-reveal="up" style="display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-bottom:34px;">
+        <sc-for list="{{ fleetTabs }}" as="t" hint-placeholder-count="5">
+          <button type="button" onClick="{{ t.select }}" style="{{ t.style }}">{{ t.label }}</button>
+        </sc-for>
+      </div>
+      <div class="dule-fleet-carousel" data-reveal="up" style="position:relative;">
+        <div class="dule-fleet-view" ref="{{ fleetViewRef }}" style="overflow:hidden;border:1px solid #e6eaef;border-radius:24px;box-shadow:0 30px 60px -42px rgba(20,40,74,0.5);background:#fff;">
+          <div class="dule-fleet-track" style="display:flex;transition:transform .5s cubic-bezier(.4,0,.2,1);transform:{{ fleetTransform }};">
+            <sc-for list="{{ fleetSlides }}" as="f" hint-placeholder-count="5">
+              <div class="dule-fleet-slide" style="min-width:100%;box-sizing:border-box;">
+                <div class="dule-fleet-card" style="display:grid;grid-template-columns:0.85fr 1.15fr;gap:8px;align-items:stretch;background:#fff;">
+                  <div class="dule-fleet-info" style="position:relative;padding:44px 40px;display:flex;flex-direction:column;justify-content:center;">
+                    <div aria-hidden="true" style="position:absolute;top:18px;right:26px;font-family:'Barlow Semi Condensed',sans-serif;font-weight:800;font-size:150px;line-height:.8;color:#eef2f7;pointer-events:none;user-select:none;z-index:0;">{{ f.letter }}</div>
+                    <div style="position:relative;z-index:1;">
+                      <div style="display:inline-flex;align-items:center;gap:8px;background:#fdecec;color:#e11f2a;font-weight:800;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;padding:6px 13px;border-radius:100px;margin-bottom:16px;">Kategorija {{ f.label }}</div>
+                      <h3 style="font-family:'Barlow Semi Condensed',sans-serif;font-weight:800;font-size:30px;line-height:1.05;color:#14284a;margin:0 0 12px;">{{ f.title }}</h3>
+                      <p style="font-size:15.5px;line-height:1.7;color:#54606f;margin:0 0 22px;max-width:360px;">{{ f.desc }}</p>
+                      <div style="display:flex;flex-wrap:wrap;gap:9px;">
+                        <sc-for list="{{ f.chips }}" as="c" hint-placeholder-count="3">
+                          <span style="display:inline-flex;align-items:center;gap:7px;background:#f4f7fb;border:1px solid #e6eaef;color:#3a4658;font-size:13px;font-weight:600;padding:8px 13px;border-radius:9px;"><span style="width:6px;height:6px;border-radius:50%;background:#1c9bd8;"></span>{{ c }}</span>
+                        </sc-for>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dule-fleet-stage" style="position:relative;background:radial-gradient(120% 90% at 50% 18%,#ffffff 0%,#eaf0f7 68%,#dce6f1 100%);min-height:380px;display:flex;align-items:center;justify-content:center;padding:34px;">
+                    <div aria-hidden="true" style="position:absolute;bottom:52px;left:50%;transform:translateX(-50%);width:66%;height:34px;background:radial-gradient(50% 50% at 50% 50%,rgba(20,40,74,0.22),transparent 72%);filter:blur(3px);"></div>
+                    <div style="position:relative;z-index:2;width:78%;max-width:520px;height:290px;">
+                      <image-slot id="{{ f.slotId }}" shape="rect" fit="contain" placeholder="{{ f.ph }}"></image-slot>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div class="dule-fleet-controls" style="display:flex;align-items:center;justify-content:center;gap:18px;margin-top:24px;">
+          <button type="button" onClick="{{ prevCat }}" aria-label="Prethodna kategorija" class="dule-fleet-arrow" style="width:48px;height:48px;border-radius:50%;border:1px solid #d7dfe9;background:#fff;color:#14284a;font-size:22px;cursor:pointer;box-shadow:0 8px 20px -10px rgba(20,40,74,0.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .18s,color .18s,border-color .18s;" style-hover="background:#14284a;color:#fff;border-color:#14284a;">‹</button>
+          <div class="dule-fleet-dots" style="display:flex;justify-content:center;gap:9px;">
+            <sc-for list="{{ fleetDots }}" as="d" hint-placeholder-count="5">
+              <button type="button" onClick="{{ d.go }}" aria-label="Vozilo" style="{{ d.style }}"></button>
+            </sc-for>
+          </div>
+          <button type="button" onClick="{{ nextCat }}" aria-label="Sledeća kategorija" class="dule-fleet-arrow" style="width:48px;height:48px;border-radius:50%;border:1px solid #d7dfe9;background:#fff;color:#14284a;font-size:22px;cursor:pointer;box-shadow:0 8px 20px -10px rgba(20,40,74,0.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .18s,color .18s,border-color .18s;" style-hover="background:#14284a;color:#fff;border-color:#14284a;">›</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#14284a;position:relative;overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute;right:-60px;top:-80px;width:320px;height:320px;border-radius:50%;border:2px dashed rgba(255,255,255,0.08);"></div>
+    <div style="max-width:1240px;margin:0 auto;padding:44px 32px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;position:relative;">
+      <h2 style="font-family:'Barlow Semi Condensed',sans-serif;font-weight:800;font-size:34px;line-height:1.1;color:#fff;margin:0;">Svidelo ti se? Javi se i kreni.</h2>
+      <a href="tel:0606037037" style="display:inline-flex;align-items:center;background:#e11f2a;color:#fff;text-decoration:none;font-weight:700;font-size:17px;padding:16px 30px;border-radius:12px;box-shadow:0 16px 30px -14px rgba(225,31,42,0.9);" style-hover="background:#c4141e;">Pozovi 060 6 037 037</a>
+    </div>
+  </section>
+
+  <dc-import name="Footer" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;900px&quot;}}">
+class Component extends DCLogic {
+  rootRef = React.createRef();
+  state = { activeSpot: null, catIdx: 1 };
+  fleetTabsRef = React.createRef();
+  _syncTabs() {
+    const el = this.fleetTabsRef.current;
+    if (!el) return;
+    const btns = el.querySelectorAll('button');
+    if (!btns.length) return;
+    const active = ((this.state.catIdx % btns.length) + btns.length) % btns.length;
+    btns.forEach((b, i) => {
+      if (i === active) {
+        b.style.background = '#e11f2a';
+        b.style.color = '#fff';
+        b.style.border = '1.5px solid #e11f2a';
+        b.style.boxShadow = '0 12px 22px -12px rgba(225,31,42,0.9)';
+      } else {
+        b.style.background = '#fff';
+        b.style.color = '#54606f';
+        b.style.border = '1.5px solid #dbe3ec';
+        b.style.boxShadow = 'none';
+      }
+    });
+  }
+  componentDidUpdate() { this._syncTabs(); }
+  vozilaRef = React.createRef();
+  instruktoriRef = React.createRef();
+  fleetViewRef = React.createRef();
+  _goFleet(i) {
+    const view = this.fleetViewRef.current;
+    if (view && getComputedStyle(view).overflowX !== 'hidden') {
+      view.scrollTo({ left: i * view.clientWidth, behavior: 'smooth' });
+    }
+    this.setState({ catIdx: i });
+  }
+  componentDidMount() {
+    const fview = this.fleetViewRef.current;
+    if (fview) {
+      let fraf = null;
+      fview.addEventListener('scroll', () => {
+        if (fraf) return;
+        fraf = requestAnimationFrame(() => {
+          fraf = null;
+          if (getComputedStyle(fview).overflowX === 'hidden') return;
+          const i = Math.round(fview.scrollLeft / fview.clientWidth);
+          if (i !== this.state.catIdx) this.setState({ catIdx: i });
+        });
+      });
+    }
+    const hash = (location.hash || '').replace('#','');
+    const targetRef = hash === 'vozila' ? this.vozilaRef : (hash === 'instruktori' ? this.instruktoriRef : null);
+    if (targetRef) {
+      const go = (n) => {
+        const el = targetRef.current;
+        if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 80, behavior: 'smooth' });
+        else if (n > 0) setTimeout(() => go(n - 1), 120);
+      };
+      setTimeout(() => go(12), 200);
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = 1; e.target.style.transform = 'none'; io.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    const root = this.rootRef.current;
+    if (root) root.querySelectorAll('[data-reveal]').forEach(el => {
+      el.style.opacity = '0'; el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity .6s ease, transform .6s ease';
+      io.observe(el);
+    });
+    this._syncTabs();
+  }
+  renderVals() {
+    const instructors = [
+      { name: 'Bojan Radosavljević', role: 'Instruktor / ispitivač', img: 'assets/instruktor-bojan.jpg' },
+      { name: 'Dušan Zdravković', role: 'Direktor', img: 'assets/instruktor-dusan.jpg' },
+      { name: 'Tatjana Vučković', role: 'Administrator', img: 'assets/instruktor-tatjana.jpg', pos: 'center top' },
+      { name: 'Milena Mladenović', role: 'Instruktor', img: 'assets/instruktor-milena.jpg', pos: 'center 32%' },
+      { name: 'Veljko Petrović', role: 'Instruktor', img: 'assets/instruktor-veljko.jpg', pos: 'center 28%' },
+      { name: 'Marijana Simonović', role: 'Predavač', img: 'assets/instruktor-marijana.jpg' },
+      { name: 'Vlasta Mitić', role: 'Instruktor', img: 'assets/instruktor-vlasta.jpg' },
+      { name: 'Marko Mladenović', role: 'Instruktor / predavač / ispitivač', img: 'assets/instruktor-marko.jpg' },
+    ].map((p, k) => {
+      const slotId = 'instruktor-' + (k + 1);
+      const photo = p.img
+        ? React.createElement('img', { src: p.img, alt: p.name, style: { width: '100%', height: '100%', objectFit: 'cover', objectPosition: p.pos || 'center top', transform: p.scale ? 'scale(' + p.scale + ')' : undefined, transformOrigin: 'center top', display: 'block' } })
+        : React.createElement('image-slot', { id: slotId, shape: 'rect', placeholder: p.name });
+      return { slotId, ph: p.name, name: p.name, role: p.role, photo };
+    });
+    const fleet = [
+      { key: 'A', label: 'A', title: 'Motocikl', slotId: 'fleet-a', ph: 'Motocikl kat. A', desc: 'Za A, A1, A2 i AM kategoriju — vežbaš na urednom i sigurnom motoru uz punu zaštitnu opremu.', chips: ['A / A1 / A2 / AM', 'Zaštitna oprema', 'Redovno servisiran'] },
+      { key: 'B', label: 'B', title: 'Volkswagen Polo', slotId: 'fleet-b', ph: 'Automobil kat. B', desc: 'Naš najčešći automobil za obuku — lak za upravljanje i idealan za prve časove vožnje.', chips: ['Manuelni menjač', 'Dupla komanda', 'Klima uređaj'] },
+      { key: 'BE', label: 'BE', title: 'Automobil sa prikolicom', slotId: 'fleet-be', ph: 'Vozilo kat. BE', desc: 'Vozilo B kategorije sa priključnim vozilom — za sigurno savladavanje vožnje sa prikolicom.', chips: ['Priključno vozilo', 'Dupla komanda'] },
+      { key: 'C', label: 'C', title: 'Teretno vozilo', slotId: 'fleet-c', ph: 'Kamion kat. C', desc: 'Kamion za C kategoriju — obuka za bezbedno upravljanje teretnim vozilom.', chips: ['Teretno vozilo', 'Dupla komanda'] },
+      { key: 'CE', label: 'CE', title: 'Šleper', slotId: 'fleet-ce', ph: 'Šleper kat. CE', desc: 'Teretno vozilo sa prikolicom za CE kategoriju — za najzahtevnije vozačke izazove.', chips: ['Kamion + prikolica', 'Dupla komanda'] },
+    ];
+    const catIdx = ((this.state.catIdx % fleet.length) + fleet.length) % fleet.length;
+    const cur = fleet[catIdx];
+    const fleetTabs = fleet.map((c, i) => ({
+      label: c.label,
+      select: () => this._goFleet(i),
+      style: (i === catIdx
+        ? 'background:#e11f2a;color:#fff;border:1.5px solid #e11f2a;box-shadow:0 12px 22px -12px rgba(225,31,42,0.9);'
+        : 'background:#fff;color:#54606f;border:1.5px solid #dbe3ec;') +
+        "min-width:56px;height:48px;padding:0 20px;border-radius:100px;font-family:'Barlow Semi Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:0.5px;cursor:pointer;transition:all .18s;",
+    }));
+
+    const h = React.createElement;
+    const spots = [
+      { x: 11, y: 52, name: 'Marko Mladenović', role: 'Instruktor / ispitivač', img: 'assets/instruktor-marko.jpg', bio: 'Instruktor, predavač i ispitivač — znanje prenosi jasno i sa merom.' },
+      { x: 26.5, y: 56, name: 'Bojan Radosavljević', role: 'Instruktor / ispitivač', img: 'assets/instruktor-bojan.jpg', bio: 'Iskusan instruktor i ispitivač koji te strpljivo vodi kroz svaki korak obuke.' },
+      { x: 37.5, y: 64, name: 'Milena Mladenović', role: 'Instruktor', img: 'assets/instruktor-milena.jpg', pos: 'center 32%', bio: 'Vedra i strpljiva, čini da se za volanom osećaš opušteno od prvog časa.' },
+      { x: 51.5, y: 60, name: 'Vlasta Mitić', role: 'Instruktor', img: 'assets/instruktor-vlasta.jpg', bio: 'Iskusan instruktor koji ti pristupa smireno i sigurno vodi do dozvole.' },
+      { x: 63.5, y: 60, name: 'Marko Mladenović', role: 'Instruktor / ispitivač', img: 'assets/instruktor-marko.jpg', bio: 'Instruktor, predavač i ispitivač — znanje prenosi jasno i sa merom.' },
+      { x: 77, y: 59, name: 'Marijana Simonović', role: 'Predavač', img: 'assets/instruktor-marijana.jpg', bio: 'Teoriju objašnjava jasno i zanimljivo — priprema te za ispit bez stresa.' },
+      { x: 90.5, y: 60, name: 'Tatjana Vučković', role: 'Administrator', img: 'assets/instruktor-tatjana.jpg', pos: 'center top', bio: 'Uvek nasmejana, prva te dočeka i pomaže oko svih papira i termina.' },
+    ];
+    const active = this.state.activeSpot;
+    const teamOverlay = h('div', { style: { position: 'absolute', inset: 0, pointerEvents: 'none' } },
+      spots.map((s, i) => {
+        const isOn = active === i;
+        const flip = s.x > 78;
+        const edgeL = s.x < 18;
+        return h('div', { key: i, style: { position: 'absolute', left: s.x + '%', top: s.y + '%', transform: 'translate(-50%,-50%)', pointerEvents: 'auto' } },
+          h('button', {
+            'aria-label': s.name,
+            onClick: (e) => { e.stopPropagation(); this.setState(st => ({ activeSpot: st.activeSpot === i ? null : i })); },
+            style: {
+              width: '22px', height: '22px', borderRadius: '50%', border: '2.5px solid #fff', cursor: 'pointer',
+              background: isOn ? '#c4141e' : '#e11f2a', padding: 0, position: 'relative', zIndex: 3,
+              animation: 'dulePulse 2s infinite', animationDelay: (i * 0.28) + 's',
+              transform: isOn ? 'scale(1.18)' : 'scale(1)', transition: 'transform .18s ease, background .18s ease'
+            }
+          }),
+          isOn ? h('div', { style: {
+              position: 'absolute', left: '50%', bottom: 'calc(50% + 20px)', transform: 'translateX(-50%)',
+              width: '2px', height: '40px', background: 'linear-gradient(to bottom, rgba(225,31,42,0), #e11f2a)', zIndex: 2
+            } }) : null,
+          isOn ? h('div', { style: {
+              position: 'absolute', left: edgeL ? '-8px' : (flip ? 'auto' : '50%'), right: flip ? '-8px' : 'auto', bottom: 'calc(50% + 56px)',
+              transform: (flip || edgeL) ? 'none' : 'translateX(-50%)', transformOrigin: 'bottom center',
+              width: '272px', display: 'flex', gap: '13px', alignItems: 'stretch',
+              background: 'rgba(255,255,255,0.98)', backdropFilter: 'blur(4px)', borderRadius: '14px', padding: '13px',
+              boxShadow: '0 20px 40px -14px rgba(20,40,74,0.7)', textAlign: 'left', zIndex: 5,
+              animation: 'duleLabelIn .28s ease both', border: '1px solid rgba(225,31,42,0.22)'
+            } },
+            h('div', { style: { width: '78px', minWidth: '78px', height: '96px', borderRadius: '10px', overflow: 'hidden', background: '#eef2f7' } },
+              h('img', { src: s.img, alt: s.name, style: { width: '100%', height: '100%', objectFit: 'cover', objectPosition: s.pos || 'center top', display: 'block' } })
+            ),
+            h('div', { style: { flex: 1, minWidth: 0 } },
+              h('div', { style: { fontFamily: "'Barlow Semi Condensed',sans-serif", fontWeight: 800, fontSize: '17px', color: '#14284a', lineHeight: 1.1 } }, s.name),
+              h('div', { style: { fontSize: '12px', fontWeight: 700, color: '#e11f2a', margin: '2px 0 7px' } }, s.role),
+              h('div', { style: { fontSize: '12.5px', color: '#5b6572', lineHeight: 1.5 } }, s.bio)
+            )
+          ) : null
+        );
+      })
+    );
+
+    const fleetSlides = fleet.map(c => ({
+      letter: c.label, label: c.label, title: c.title, desc: c.desc,
+      chips: c.chips, slotId: c.slotId, ph: c.ph,
+    }));
+    const fleetDots = fleet.map((c, i) => ({
+      go: () => this._goFleet(i),
+      style: `width:${i === catIdx ? 26 : 10}px;height:10px;border-radius:100px;border:none;cursor:pointer;padding:0;transition:all .3s;background:${i === catIdx ? '#e11f2a' : '#cdd6e0'};`,
+    }));
+    return { rootRef: this.rootRef, vozilaRef: this.vozilaRef, instruktoriRef: this.instruktoriRef, instructors, teamOverlay,
+      fleetTabs,
+      fleetTabsRef: this.fleetTabsRef,
+      fleetViewRef: this.fleetViewRef,
+      fleetSlides,
+      fleetDots,
+      fleetTransform: `translateX(-${catIdx * 100}%)`,
+      prevCat: () => this.setState(s => ({ catIdx: (((s.catIdx - 1) % fleet.length) + fleet.length) % fleet.length })),
+      nextCat: () => this.setState(s => ({ catIdx: (s.catIdx + 1) % fleet.length })),
+    };
+  }
+}
+</script>
+</body>
+</html>
